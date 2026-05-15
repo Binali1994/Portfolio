@@ -1,783 +1,472 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Binali Patel — Senior Frontend Developer & Team Lead</title>
-<meta name="description" content="Senior Frontend Developer & Team Lead with 6+ years of experience. Employee of the Year 2020.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-[data-theme="dark"] {
-  --bg:           #0d0d0d;
-  --bg-alt:       #141414;
-  --bg-card:      #1a1a1a;
-  --bg-card-hover:#1f1f1f;
-  --border:       #2a2a2a;
-  --border-hover: #3d3d3d;
-  --text:         #f5f5f5;
-  --text-2:       #a0a0a0;
-  --text-3:       #555;
-  --accent:       #6366f1;
-  --accent-light: rgba(99,102,241,0.12);
-  --accent-hover: #818cf8;
-  --badge-bg:     rgba(99,102,241,0.1);
-  --badge-border: rgba(99,102,241,0.25);
-  --badge-text:   #a5b4fc;
-  --award-bg:     rgba(251,191,36,0.08);
-  --award-border: rgba(251,191,36,0.2);
-  --award-text:   #fcd34d;
-  --tag-bg:       #222;
-  --tag-text:     #a0a0a0;
-  --tag-border:   #333;
-  --nav-bg:       rgba(13,13,13,0.88);
-  --shadow:       0 1px 3px rgba(0,0,0,0.5);
-  --shadow-lg:    0 8px 32px rgba(0,0,0,0.6);
-  --toggle-bg:    #252525;
-}
-[data-theme="light"] {
-  --bg:           #f8f8f8;
-  --bg-alt:       #ffffff;
-  --bg-card:      #ffffff;
-  --bg-card-hover:#f5f5ff;
-  --border:       #e8e8e8;
-  --border-hover: #c7c7e8;
-  --text:         #111;
-  --text-2:       #555;
-  --text-3:       #999;
-  --accent:       #4f46e5;
-  --accent-light: rgba(79,70,229,0.08);
-  --accent-hover: #6366f1;
-  --badge-bg:     rgba(79,70,229,0.08);
-  --badge-border: rgba(79,70,229,0.2);
-  --badge-text:   #4338ca;
-  --award-bg:     rgba(217,119,6,0.07);
-  --award-border: rgba(217,119,6,0.18);
-  --award-text:   #b45309;
-  --tag-bg:       #f3f4f6;
-  --tag-text:     #374151;
-  --tag-border:   #e5e7eb;
-  --nav-bg:       rgba(248,248,248,0.92);
-  --shadow:       0 1px 3px rgba(0,0,0,0.07);
-  --shadow-lg:    0 8px 32px rgba(0,0,0,0.1);
-  --toggle-bg:    #ebebeb;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg); color: var(--text);
-  line-height: 1.6; -webkit-font-smoothing: antialiased;
-  transition: background 0.3s, color 0.3s;
-}
-
-.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: var(--nav-bg); backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: background 0.3s, border-color 0.3s;
-}
-.nav-inner {
-  max-width: 1100px; margin: 0 auto; padding: 0 24px;
-  height: 64px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 800; font-size: 1rem; letter-spacing: -0.02em; color: var(--accent); text-decoration: none; }
-.nav-links { display: flex; gap: 2px; list-style: none; }
-.nav-links a {
-  color: var(--text-2); text-decoration: none;
-  font-size: 0.83rem; font-weight: 500; padding: 6px 12px; border-radius: 7px;
-  transition: color 0.2s, background 0.2s;
-}
-.nav-links a:hover { color: var(--text); background: var(--accent-light); }
-.nav-right { display: flex; align-items: center; gap: 10px; }
-.avail-badge {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 0.74rem; font-weight: 600; color: #22c55e;
-  background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);
-  padding: 4px 12px; border-radius: 20px;
-}
-.avail-dot { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.75);} }
-.theme-btn {
-  width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border);
-  background: var(--toggle-bg); cursor: pointer; font-size: 1rem;
-  display: flex; align-items: center; justify-content: center;
-  transition: background 0.2s, border-color 0.2s, transform 0.15s; flex-shrink: 0;
-}
-.theme-btn:hover { border-color: var(--accent); transform: scale(1.08); }
-
-/* HERO */
-#hero { padding: 136px 0 80px; border-bottom: 1px solid var(--border); }
-.hero-inner {
-  max-width: 1100px; margin: 0 auto; padding: 0 24px;
-  display: grid; grid-template-columns: 1fr 380px; gap: 56px; align-items: center;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.03em;
-  color: var(--badge-text); background: var(--badge-bg); border: 1px solid var(--badge-border);
-  padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
-  animation: fadeUp 0.6s ease both;
-}
-.hero-name {
-  font-size: clamp(2.8rem, 5vw, 4.6rem); font-weight: 900; line-height: 1.0;
-  letter-spacing: -0.04em; margin-bottom: 12px; animation: fadeUp 0.6s 0.08s ease both;
-}
-.hero-name .accent { color: var(--accent); }
-.hero-role { font-size: 1.05rem; font-weight: 500; color: var(--text-2); margin-bottom: 18px; animation: fadeUp 0.6s 0.14s ease both; }
-.hero-summary { font-size: 0.9rem; line-height: 1.8; color: var(--text-2); max-width: 510px; margin-bottom: 32px; animation: fadeUp 0.6s 0.2s ease both; }
-.hero-summary strong { color: var(--text); font-weight: 600; }
-.hero-btns { display: flex; gap: 10px; flex-wrap: wrap; animation: fadeUp 0.6s 0.26s ease both; }
-
-.btn-primary {
-  background: var(--accent); color: #fff; padding: 11px 22px; border: none; border-radius: 8px;
-  font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600;
-  text-decoration: none; display: inline-block; cursor: pointer;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-}
-.btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(99,102,241,0.35); }
-.btn-secondary {
-  background: var(--bg-card); color: var(--text); padding: 11px 22px;
-  border: 1px solid var(--border); border-radius: 8px;
-  font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600;
-  text-decoration: none; display: inline-block; cursor: pointer;
-  transition: border-color 0.2s, color 0.2s, transform 0.2s;
-}
-.btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
-.hero-right { display: flex; flex-direction: column; gap: 12px; animation: fadeLeft 0.7s 0.2s ease both; }
-.stat-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-  padding: 18px 20px; display: flex; align-items: center; gap: 16px; box-shadow: var(--shadow);
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s, background 0.3s;
-}
-.stat-card:hover { border-color: var(--border-hover); transform: translateX(5px); box-shadow: var(--shadow-lg); }
-.stat-num { font-size: 2.1rem; font-weight: 900; color: var(--accent); line-height: 1; min-width: 64px; letter-spacing: -0.04em; }
-.stat-info strong { display: block; font-size: 0.87rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-.stat-info span { font-size: 0.74rem; color: var(--text-2); line-height: 1.5; }
-.awards-box {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-  padding: 16px 18px; box-shadow: var(--shadow); transition: background 0.3s, border-color 0.3s;
-}
-.awards-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
-.awards-pills { display: flex; flex-wrap: wrap; gap: 7px; }
-.award-pill {
-  font-size: 0.72rem; font-weight: 500;
-  background: var(--award-bg); border: 1px solid var(--award-border); color: var(--award-text);
-  padding: 4px 12px; border-radius: 20px;
-}
-
-/* SECTION BASE */
-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
-section:last-of-type { border-bottom: none; }
-.sec-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
-.sec-title { font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.025em; color: var(--text); margin-bottom: 44px; line-height: 1.15; }
-
-/* SKILLS */
-#skills { background: var(--bg-alt); }
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 14px; }
-.skill-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-  padding: 22px 20px; box-shadow: var(--shadow);
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s, background 0.3s;
-}
-.skill-card:hover { border-color: var(--border-hover); transform: translateY(-3px); box-shadow: var(--shadow-lg); background: var(--bg-card-hover); }
-.sk-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-.sk-icon { font-size: 1.25rem; }
-.sk-name { font-size: 0.9rem; font-weight: 700; color: var(--text); }
-.sk-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.sk-tag {
-  font-size: 0.72rem; font-weight: 500; background: var(--tag-bg); border: 1px solid var(--tag-border);
-  color: var(--tag-text); padding: 3px 10px; border-radius: 6px;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-.sk-tag:hover { background: var(--accent-light); color: var(--accent); border-color: var(--badge-border); }
-.sk-tag.hi { background: var(--badge-bg); color: var(--badge-text); border-color: var(--badge-border); }
-
-/* EXPERIENCE */
-#experience { background: var(--bg); }
-.timeline { position: relative; }
-.timeline::before { content: ''; position: absolute; left: 14px; top: 8px; bottom: 8px; width: 1px; background: var(--border); }
-.tl-item { position: relative; padding-left: 48px; margin-bottom: 48px; }
-.tl-item:last-child { margin-bottom: 0; }
-.tl-dot { position: absolute; left: 7px; top: 5px; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; border: 2px solid var(--bg); box-shadow: 0 0 0 3px var(--accent-light); }
-.tl-date { display: inline-block; font-size: 0.72rem; font-weight: 600; color: var(--badge-text); background: var(--badge-bg); border: 1px solid var(--badge-border); padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; }
-.tl-role { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 3px; }
-.tl-co { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
-.tl-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
-.tl-list li { font-size: 0.83rem; color: var(--text-2); line-height: 1.7; padding-left: 16px; position: relative; }
-.tl-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 3px; }
-.tl-awards { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
-.tl-award { font-size: 0.72rem; font-weight: 500; background: var(--award-bg); border: 1px solid var(--award-border); color: var(--award-text); padding: 4px 12px; border-radius: 20px; }
-
-/* ── PROJECTS ── */
-#projects { background: var(--bg-alt); }
-
-/* Filter tabs */
-.proj-filters {
-  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;
-}
-.pf-btn {
-  font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600;
-  padding: 7px 16px; border-radius: 8px; border: 1px solid var(--border);
-  background: var(--bg-card); color: var(--text-2); cursor: pointer;
-  transition: all 0.2s;
-}
-.pf-btn:hover, .pf-btn.active {
-  background: var(--accent); color: #fff; border-color: var(--accent);
-}
-
-.projects-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;
-}
-.proj-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
-  overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column;
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s, background 0.3s;
-}
-.proj-card:hover { border-color: var(--border-hover); transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-.proj-card[data-hidden="true"] { display: none; }
-
-.proj-thumb {
-  height: 150px; display: flex; align-items: center; justify-content: center;
-  font-size: 2.8rem; position: relative; overflow: hidden; flex-shrink: 0;
-}
-/* Unique gradients per project */
-.t-streamit-wp  { background: linear-gradient(135deg, #0f0c29, #1a1060, #302b63); }
-.t-streamit-html{ background: linear-gradient(135deg, #0d1117, #161b22, #21262d); }
-.t-streamit-l   { background: linear-gradient(135deg, #130f27, #1e1247, #2d1b69); }
-.t-kivicare-wp  { background: linear-gradient(135deg, #0a2e1a, #0d4a2b, #06a050); }
-.t-kivicare-html{ background: linear-gradient(135deg, #062020, #0a3535, #0e7070); }
-.t-socialv-wp   { background: linear-gradient(135deg, #0f1c3f, #1a2e6b, #2541a8); }
-.t-socialv-html { background: linear-gradient(135deg, #13182f, #1d2548, #283780); }
-.t-xray         { background: linear-gradient(135deg, #200a0a, #3d1010, #7a1e1e); }
-
-.proj-type-badge {
-  position: absolute; top: 12px; left: 12px;
-  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 3px 10px; border-radius: 20px; backdrop-filter: blur(8px);
-}
-.badge-wp   { background: rgba(33,117,155,0.7); color: #7dd3fc; border: 1px solid rgba(125,211,252,0.25); }
-.badge-html { background: rgba(228,77,38,0.6);  color: #fca5a5; border: 1px solid rgba(252,165,165,0.25); }
-.badge-laravel { background: rgba(255,45,32,0.5); color: #fca5a5; border: 1px solid rgba(252,165,165,0.2); }
-
-.proj-live-btn {
-  position: absolute; bottom: 10px; right: 12px;
-  font-size: 0.65rem; font-weight: 600;
-  background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.9);
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 4px 12px; border-radius: 20px; backdrop-filter: blur(8px);
-  text-decoration: none; transition: background 0.2s;
-}
-.proj-live-btn:hover { background: rgba(99,102,241,0.7); }
-
-.proj-body { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
-.proj-title { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-.proj-role-label { font-size: 0.74rem; font-weight: 600; color: var(--accent); margin-bottom: 10px; }
-.proj-desc { font-size: 0.79rem; color: var(--text-2); line-height: 1.7; margin-bottom: 14px; flex: 1; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
-.ptag {
-  font-size: 0.67rem; font-weight: 500;
-  background: var(--tag-bg); border: 1px solid var(--tag-border);
-  color: var(--tag-text); padding: 3px 9px; border-radius: 5px;
-}
-
-/* "View more" link */
-.proj-more {
-  text-align: center; margin-top: 32px;
-}
-.proj-more a {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.85rem; font-weight: 600; color: var(--accent);
-  text-decoration: none; border: 1px solid var(--badge-border);
-  background: var(--badge-bg); padding: 10px 24px; border-radius: 8px;
-  transition: background 0.2s, transform 0.2s;
-}
-.proj-more a:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-/* EDUCATION */
-#education { background: var(--bg); }
-.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.edu-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-  padding: 28px 24px; box-shadow: var(--shadow);
-  transition: border-color 0.25s, transform 0.25s, background 0.3s;
-}
-.edu-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
-.edu-deg { font-size: 2.2rem; font-weight: 900; color: var(--accent); letter-spacing: -0.04em; margin-bottom: 8px; }
-.edu-school { font-size: 0.85rem; font-weight: 500; color: var(--text); line-height: 1.5; margin-bottom: 12px; }
-.edu-year { display: inline-block; font-size: 0.7rem; font-weight: 600; color: var(--text-3); background: var(--tag-bg); border: 1px solid var(--tag-border); padding: 3px 12px; border-radius: 20px; }
-
-/* CONTACT */
-#contact { background: var(--bg-alt); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-.contact-left h3 { font-size: 1.9rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 12px; color: var(--text); }
-.contact-left p { font-size: 0.85rem; color: var(--text-2); line-height: 1.8; max-width: 380px; margin-bottom: 28px; }
-.contact-items { display: flex; flex-direction: column; gap: 10px; }
-.c-item {
-  display: flex; align-items: center; gap: 12px; padding: 13px 16px;
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
-  font-size: 0.8rem; color: var(--text-2); text-decoration: none; word-break: break-all;
-  transition: border-color 0.2s, color 0.2s, transform 0.2s;
-}
-.c-item:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
-.c-icon { font-size: 1rem; flex-shrink: 0; }
-.contact-form { display: flex; flex-direction: column; gap: 13px; }
-.f-group { display: flex; flex-direction: column; gap: 5px; }
-.f-label { font-size: 0.72rem; font-weight: 600; color: var(--text-2); letter-spacing: 0.02em; }
-.f-input, .f-ta {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
-  color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.85rem;
-  padding: 11px 14px; outline: none; resize: none;
-  transition: border-color 0.2s, box-shadow 0.2s, background 0.3s;
-}
-.f-input:focus, .f-ta:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
-.f-ta { min-height: 110px; }
-
-/* FOOTER */
-footer { background: var(--bg); border-top: 1px solid var(--border); padding: 28px 0; transition: background 0.3s, border-color 0.3s; }
-.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-.footer-logo { font-weight: 800; font-size: 0.92rem; color: var(--accent); }
-footer p { font-size: 0.75rem; color: var(--text-3); }
-
-/* REVEAL */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
-.reveal.on { opacity: 1; transform: none; }
-
-/* KEYFRAMES */
-@keyframes fadeUp { from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;} }
-@keyframes fadeLeft { from{opacity:0;transform:translateX(22px);}to{opacity:1;transform:none;} }
-
-/* RESPONSIVE */
-@media (max-width: 860px) {
-  .nav-links { display: none; }
-  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
-  .hero-right { order: -1; }
-  .stat-card:hover { transform: none; }
-  .contact-grid { grid-template-columns: 1fr; gap: 36px; }
-  .edu-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 520px) {
-  .container, .nav-inner, .hero-inner { padding-left: 16px; padding-right: 16px; }
-  .hero-name { font-size: 2.5rem; }
-  section { padding: 56px 0; }
-  .hero-btns { flex-direction: column; }
-  .btn-primary, .btn-secondary { text-align: center; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binali Patel — Senior Frontend Developer & Team Lead</title>
+  <meta name="description"
+    content="Senior Frontend Developer & Team Lead with 6+ years of experience. Employee of the Year 2020.">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">Binali Patel</a>
-    <ul class="nav-links">
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <div class="avail-badge"><div class="avail-dot"></div>Available</div>
-      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Binali Patel</a>
+      <ul class="nav-links">
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="avail-badge">
+          <div class="avail-dot"></div>Available
+        </div>
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-badge">⚡ Senior Frontend Developer & Team Lead</div>
-      <h1 class="hero-name">Binali<br><span class="accent">Patel</span></h1>
-      <div class="hero-role">Building pixel-perfect web experiences since 2017</div>
-      <p class="hero-summary">
-        Results-driven Frontend Developer with <strong>6+ years</strong> of experience building scalable,
-        responsive web applications across OTT platforms, SaaS products, admin dashboards, and HTML
-        template systems. Leading teams, mentoring developers & delivering exceptional UIs.
-        Recognized as <strong>Employee of the Year 2020.</strong>
-      </p>
-      <div class="hero-btns">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-secondary">Hire Me</a>
-        <a href="https://www.linkedin.com/in/binali-patel-9b03a411a" target="_blank" class="btn-secondary">LinkedIn ↗</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="stat-card">
-        <div class="stat-num">6+</div>
-        <div class="stat-info"><strong>Years Experience</strong><span>Dec 2019 – Present<br>Goldenmace IT Solutions</span></div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">8+</div>
-        <div class="stat-info"><strong>Live Projects Shipped</strong><span>ThemeForest · WordPress · HTML · Laravel</span></div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">10+</div>
-        <div class="stat-info"><strong>Technologies</strong><span>HTML · SCSS · JS · Bootstrap · WP · Tailwind</span></div>
-      </div>
-      <div class="awards-box">
-        <div class="awards-label">Recognition</div>
-        <div class="awards-pills">
-          <span class="award-pill">🏆 Employee of the Year 2020</span>
-          <span class="award-pill">⭐ Employee of the Month</span>
-          <span class="award-pill">👑 Dashboard Queen</span>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-badge">⚡ Senior Frontend Developer | UI Engineer | Team Lead</div>
+        <h1 class="hero-name">Binali <span class="accent">Patel</span></h1>
+        <div class="hero-role">Building pixel-perfect web experiences since 2017</div>
+        <p class="hero-summary">
+          Results-driven Frontend Developer with <strong>6+ years</strong> of experience building scalable,
+          responsive web applications across OTT platforms, SaaS products, admin dashboards, and HTML
+          template systems. Leading teams, mentoring developers & delivering exceptional UIs.
+          Recognized as <strong>Employee of the Year 2020.</strong>
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-secondary">Hire Me</a>
+          <a href="https://www.linkedin.com/in/binaliptl/" target="_blank" class="btn-secondary">LinkedIn
+            ↗</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div class="sec-label">01 — Skills</div>
-    <div class="sec-title">Tech Stack</div>
-    <div class="skills-grid">
-      <div class="skill-card reveal">
-        <div class="sk-header"><span class="sk-icon">🏗️</span><span class="sk-name">Frontend Core</span></div>
-        <div class="sk-tags"><span class="sk-tag hi">HTML5</span><span class="sk-tag hi">CSS3</span><span class="sk-tag hi">SCSS / SASS</span><span class="sk-tag hi">JavaScript ES6+</span><span class="sk-tag hi">jQuery</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="sk-header"><span class="sk-icon">🌬️</span><span class="sk-name">UI Frameworks</span></div>
-        <div class="sk-tags"><span class="sk-tag hi">Bootstrap</span><span class="sk-tag hi">Tailwind CSS</span><span class="sk-tag">React.js</span><span class="sk-tag">Vue.js</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="sk-header"><span class="sk-icon">⚙️</span><span class="sk-name">Build & Tools</span></div>
-        <div class="sk-tags"><span class="sk-tag">Gulp</span><span class="sk-tag">Node.js</span><span class="sk-tag">Handlebars</span><span class="sk-tag">Git</span><span class="sk-tag">GitHub</span><span class="sk-tag">GitLab</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="sk-header"><span class="sk-icon">🟦</span><span class="sk-name">CMS & Design</span></div>
-        <div class="sk-tags"><span class="sk-tag hi">WordPress Themes</span><span class="sk-tag hi">WP Elementor</span><span class="sk-tag">Figma</span><span class="sk-tag">Adobe PSD</span><span class="sk-tag">ClickUp</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="sk-header"><span class="sk-icon">🤖</span><span class="sk-name">AI Tools</span></div>
-        <div class="sk-tags"><span class="sk-tag">ChatGPT</span><span class="sk-tag">Claude AI</span><span class="sk-tag">GitHub Copilot</span><span class="sk-tag">Cursor AI</span><span class="sk-tag">Lovable AI</span><span class="sk-tag">Gemini</span><span class="sk-tag">Stitch</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="sk-header"><span class="sk-icon">👥</span><span class="sk-name">Leadership</span></div>
-        <div class="sk-tags"><span class="sk-tag hi">Team Leadership</span><span class="sk-tag hi">Mentoring</span><span class="sk-tag hi">Code Review</span><span class="sk-tag hi">Task Management</span><span class="sk-tag">Agile / Scrum</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <div class="sec-label">02 — Experience</div>
-    <div class="sec-title">Work History</div>
-    <div class="timeline">
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <span class="tl-date">Dec 2019 — Present</span>
-        <div class="tl-role">Senior Frontend Developer & Team Lead</div>
-        <div class="tl-co">Goldenmace IT Solutions</div>
-        <ul class="tl-list">
-          <li>Developed responsive, high-performance web interfaces using HTML5, CSS3, SCSS, JavaScript, and Bootstrap.</li>
-          <li>Converted UI/UX designs from Figma and Adobe PSD into pixel-perfect, responsive layouts.</li>
-          <li>Built reusable and modular UI components to improve development efficiency and maintainability.</li>
-          <li>Ensured cross-browser compatibility across Chrome, Firefox, Safari, and Edge.</li>
-          <li>Implemented mobile-first design principles for responsive UIs across multiple devices.</li>
-          <li>Optimized website performance through code splitting, lazy loading, and asset optimization.</li>
-          <li>Used Git version control for code management, branching, and team collaboration.</li>
-          <li>Collaborated with backend developers, UI/UX designers, and product managers in agile environments.</li>
-          <li>Conducted code reviews and enforced frontend coding standards and best practices.</li>
-          <li>Mentored junior developers and provided technical guidance to the frontend team.</li>
-          <li>Debugged and resolved UI bugs and frontend performance issues.</li>
-        </ul>
-        <div class="tl-awards">
-          <span class="tl-award">🏆 Employee of the Year 2020</span>
-          <span class="tl-award">⭐ Employee of the Month</span>
-          <span class="tl-award">👑 Dashboard Queen</span>
+      <div class="hero-right">
+        <div class="stat-card">
+          <div class="stat-num">6+</div>
+          <div class="stat-info"><strong>Years Experience</strong><span>Dec 2019 – May 2026<br>Goldenmace IT
+              Solutions</span></div>
         </div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <span class="tl-date">Jun 2017 — May 2019</span>
-        <div class="tl-role">Web Designer / UI Developer</div>
-        <div class="tl-co">TemplateMela IT Services and IT Consulting</div>
-        <ul class="tl-list">
-          <li>Developed interactive web pages using HTML, CSS, and Bootstrap.</li>
-          <li>Implemented responsive layouts and cross-device compatibility.</li>
-          <li>Maintained and updated HTML templates and UI components.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <div class="sec-label">03 — Projects</div>
-    <div class="sec-title">Live Projects</div>
-
-    <!-- Filter Tabs -->
-    <div class="proj-filters">
-      <button class="pf-btn active" data-filter="all">All Projects</button>
-      <button class="pf-btn" data-filter="wordpress">WordPress</button>
-      <button class="pf-btn" data-filter="html">HTML Template</button>
-      <button class="pf-btn" data-filter="laravel">Laravel</button>
-    </div>
-
-    <div class="projects-grid">
-
-      <!-- 1. Streamit WordPress -->
-      <div class="proj-card reveal" data-cat="wordpress">
-        <div class="proj-thumb t-streamit-wp">
-          📺
-          <span class="proj-type-badge badge-wp">WordPress</span>
-          <a href="https://streamit-wordpress.iqonic.design/" target="_blank" class="proj-live-btn">Live Demo ↗</a>
+        <div class="stat-card">
+          <div class="stat-num">60+</div>
+          <div class="stat-info"><strong>Live Projects Shipped</strong><span>ThemeForest · WordPress · HTML ·
+              Laravel</span></div>
         </div>
-        <div class="proj-body">
-          <div class="proj-title">Streamit — OTT Video Streaming WordPress Theme</div>
-          <div class="proj-role-label">Frontend Developer / Team Lead</div>
-          <div class="proj-desc">Netflix-like OTT WordPress theme with fully functional admin panel, content restriction, watchlist, video rating, advanced search, and multi-layout homepage support. Featured on ThemeForest.</div>
-          <div class="proj-tags">
-            <span class="ptag">WordPress</span><span class="ptag">Elementor</span><span class="ptag">SCSS</span>
-            <span class="ptag">Bootstrap</span><span class="ptag">JavaScript</span><span class="ptag">Redux</span>
+        <div class="stat-card">
+          <div class="stat-num">10+</div>
+          <div class="stat-info"><strong>Technologies</strong><span>HTML · SCSS · JS · Bootstrap · WP · Tailwind</span>
+          </div>
+        </div>
+        <div class="awards-box">
+          <div class="awards-label">Recognition</div>
+          <div class="awards-pills">
+            <span class="award-pill">🏆 Employee of the Year 2020</span>
+            <span class="award-pill">⭐ Firebrigade / Bug Solver</span>
+            <span class="award-pill">👑 Dashboard Queen</span>
           </div>
         </div>
       </div>
-
-      <!-- 2. Streamit HTML Template -->
-      <div class="proj-card reveal" data-cat="html">
-        <div class="proj-thumb t-streamit-html">
-          🎬
-          <span class="proj-type-badge badge-html">HTML Template</span>
-          <a href="https://templates.iqonic.design/streamit-dist/intro" target="_blank" class="proj-live-btn">Live Demo ↗</a>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">Streamit — HTML / Vue / React / Laravel Admin Template</div>
-          <div class="proj-role-label">Frontend Developer / Team Lead</div>
-          <div class="proj-desc">Responsive Bootstrap 5 video streaming platform template — 5+ home demos, admin panel, movie & show listings, episode pages. Available in HTML, Vue, React, and Laravel versions.</div>
-          <div class="proj-tags">
-            <span class="ptag">HTML5</span><span class="ptag">Bootstrap 5</span><span class="ptag">SCSS</span>
-            <span class="ptag">JavaScript</span><span class="ptag">Handlebars</span><span class="ptag">Gulp</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Streamit Laravel -->
-      <div class="proj-card reveal" data-cat="laravel">
-        <div class="proj-thumb t-streamit-l">
-          🖥️
-          <span class="proj-type-badge badge-laravel">Laravel</span>
-          <a href="http://apps.iqonic.design/streamit-laravel" target="_blank" class="proj-live-btn">Live Demo ↗</a>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">Streamit — Laravel Video Streaming App</div>
-          <div class="proj-role-label">Frontend Developer</div>
-          <div class="proj-desc">Full Laravel version of the Streamit OTT platform — complete front-end UI integration with Laravel backend, including movie homes, TV shows, merchandise store and episode management.</div>
-          <div class="proj-tags">
-            <span class="ptag">HTML5</span><span class="ptag">SCSS</span><span class="ptag">Bootstrap</span>
-            <span class="ptag">Laravel</span><span class="ptag">JavaScript</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. KiviCare WordPress -->
-      <div class="proj-card reveal" data-cat="wordpress">
-        <div class="proj-thumb t-kivicare-wp">
-          🏥
-          <span class="proj-type-badge badge-wp">WordPress</span>
-          <a href="https://kivicare-wordpress.iqonic.design/" target="_blank" class="proj-live-btn">Live Demo ↗</a>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">KiviCare — Medical Clinic & Patient Management WordPress Theme</div>
-          <div class="proj-role-label">Senior Frontend Developer</div>
-          <div class="proj-desc">The #1 complete clinic management WordPress theme — 24×7 appointment booking, Elementor drag-and-drop builder, multiple clinic niche pages (Dental, Eye Care, Skincare, ENT), WooCommerce ready.</div>
-          <div class="proj-tags">
-            <span class="ptag">WordPress</span><span class="ptag">Elementor</span><span class="ptag">SCSS</span>
-            <span class="ptag">JavaScript</span><span class="ptag">WooCommerce</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. KiviCare HTML -->
-      <div class="proj-card reveal" data-cat="html">
-        <div class="proj-thumb t-kivicare-html">
-          💊
-          <span class="proj-type-badge badge-html">HTML Template</span>
-          <a href="https://themeforest.net/item/kivicare-clinic-and-patient-management-html-template/47437941" target="_blank" class="proj-live-btn">View on TF ↗</a>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">KiviCare — Clinic & Patient Management HTML + ReactJS Template</div>
-          <div class="proj-role-label">Senior Frontend Developer</div>
-          <div class="proj-desc">Predefined web elements for clinic management — General Doctor, Dentist, Eye Care, Skin Specialist, Fertility & ENT Clinic niche pages. Clean, modern HTML & ReactJS template.</div>
-          <div class="proj-tags">
-            <span class="ptag">HTML5</span><span class="ptag">Bootstrap</span><span class="ptag">SCSS</span>
-            <span class="ptag">React.js</span><span class="ptag">JavaScript</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. SocialV WordPress -->
-      <div class="proj-card reveal" data-cat="wordpress">
-        <div class="proj-thumb t-socialv-wp">
-          👥
-          <span class="proj-type-badge badge-wp">WordPress</span>
-          <a href="https://socialv-wordpress.iqonic.design/" target="_blank" class="proj-live-btn">Live Demo ↗</a>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">SocialV — Social Network & Community WordPress Theme</div>
-          <div class="proj-role-label">Frontend Developer / Team Lead</div>
-          <div class="proj-desc">Facebook-like BuddyPress social network theme — newsfeed, groups, chat, events, profile pages, Stories plugin, LearnPress eLearning integration, and WooCommerce support.</div>
-          <div class="proj-tags">
-            <span class="ptag">WordPress</span><span class="ptag">BuddyPress</span><span class="ptag">Elementor</span>
-            <span class="ptag">SCSS</span><span class="ptag">JavaScript</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. SocialV HTML -->
-      <div class="proj-card reveal" data-cat="html">
-        <div class="proj-thumb t-socialv-html">
-          💬
-          <span class="proj-type-badge badge-html">HTML Template</span>
-          <a href="https://templates.iqonic.design/socialv-dist/intro/" target="_blank" class="proj-live-btn">Live Demo ↗</a>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">SocialV — Social Network Admin Dashboard Template</div>
-          <div class="proj-role-label">Frontend Developer</div>
-          <div class="proj-desc">Multi-framework social dashboard — newsfeed, friends list, chat, calendar, events, music, weather pages. Available in HTML, Laravel, Vue, and React. Built on HopeUI design system.</div>
-          <div class="proj-tags">
-            <span class="ptag">HTML5</span><span class="ptag">Bootstrap</span><span class="ptag">SCSS</span>
-            <span class="ptag">JavaScript</span><span class="ptag">Vue.js</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 8. XRay Medical Admin -->
-      <div class="proj-card reveal" data-cat="html">
-        <div class="proj-thumb t-xray">
-          🩻
-          <span class="proj-type-badge badge-html">Admin Template</span>
-          <a href="https://themeforest.net/item/xray-medical-and-hospital-admin-template/25794797" target="_blank" class="proj-live-btn">View on TF ↗</a>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">XRay — Medical & Hospital Admin Template</div>
-          <div class="proj-role-label">Frontend Developer</div>
-          <div class="proj-desc">Modern hospital and medical dashboard with ready-to-use pages — patient management, appointments, doctor profiles, analytics. Available in React, VueJS, and HTML versions.</div>
-          <div class="proj-tags">
-            <span class="ptag">HTML5</span><span class="ptag">Bootstrap</span><span class="ptag">SCSS</span>
-            <span class="ptag">JavaScript</span><span class="ptag">React.js</span><span class="ptag">Vue.js</span>
-          </div>
-        </div>
-      </div>
-
     </div>
+  </section>
 
-    <div class="proj-more">
-      <a href="https://themeforest.net/user/iqonicdesign/portfolio?direction=desc&order_by=sales&view=grid" target="_blank">
-        🔗 View All Projects on ThemeForest
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="container">
-    <div class="sec-label">04 — Education</div>
-    <div class="sec-title">Academic Background</div>
-    <div class="edu-grid">
-      <div class="edu-card reveal">
-        <div class="edu-deg">MCA</div>
-        <div class="edu-school">Charotar University of Science & Technology (CHARUSAT)</div>
-        <span class="edu-year">Graduated 2017</span>
-      </div>
-      <div class="edu-card reveal">
-        <div class="edu-deg">BCA</div>
-        <div class="edu-school">Veer Narmad South Gujarat University (VNSGU), Surat</div>
-        <span class="edu-year">Undergraduate</span>
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="sec-label">01 — Skills</div>
+      <div class="sec-title">Tech Stack</div>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="sk-header"><span class="sk-icon">🏗️</span><span class="sk-name">Frontend Core</span></div>
+          <div class="sk-tags"><span class="sk-tag hi">HTML5</span><span class="sk-tag hi">CSS3</span><span
+              class="sk-tag hi">SCSS / SASS</span><span class="sk-tag hi">JavaScript</span><span
+              class="sk-tag hi">jQuery</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="sk-header"><span class="sk-icon">🌬️</span><span class="sk-name">UI Frameworks</span></div>
+          <div class="sk-tags"><span class="sk-tag hi">Bootstrap</span><span class="sk-tag hi">Tailwind CSS</span><span
+              class="sk-tag">React.js</span><span class="sk-tag">Vue.js</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="sk-header"><span class="sk-icon">⚙️</span><span class="sk-name">Build & Tools</span></div>
+          <div class="sk-tags"><span class="sk-tag">Gulp</span><span class="sk-tag">Node.js</span><span
+              class="sk-tag">Handlebars</span><span class="sk-tag">Git</span><span class="sk-tag">GitHub</span><span
+              class="sk-tag">GitLab</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="sk-header"><span class="sk-icon">🟦</span><span class="sk-name">CMS & Design</span></div>
+          <div class="sk-tags"><span class="sk-tag hi">WordPress Themes</span><span class="sk-tag hi">WP
+              Elementor</span><span class="sk-tag">Figma</span><span class="sk-tag">Adobe PSD</span><span
+              class="sk-tag">ClickUp</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="sk-header"><span class="sk-icon">🤖</span><span class="sk-name">AI Tools</span></div>
+          <div class="sk-tags"><span class="sk-tag">ChatGPT</span><span class="sk-tag">Claude AI</span><span
+              class="sk-tag">GitHub Copilot</span><span class="sk-tag">Cursor AI</span><span class="sk-tag">Lovable
+              AI</span><span class="sk-tag">Antigravity</span><span class="sk-tag">Gemini</span><span
+              class="sk-tag">Stitch</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="sk-header"><span class="sk-icon">👥</span><span class="sk-name">Leadership</span></div>
+          <div class="sk-tags"><span class="sk-tag hi">Team Leadership</span><span
+              class="sk-tag hi">Mentoring</span><span class="sk-tag hi">Code Review</span><span class="sk-tag hi">Task
+              Management</span></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="sec-label">05 — Contact</div>
-    <div class="sec-title">Get In Touch</div>
-    <div class="contact-grid">
-      <div class="contact-left">
-        <h3>Got a project<br>in mind?</h3>
-        <p>I'm open to freelance work, full-time roles, and exciting collaborations. Whether you need a stunning UI, a reliable team lead, or a pixel-perfect frontend — let's build something great together.</p>
-        <div class="contact-items">
-          <a href="tel:+919574163630" class="c-item"><span class="c-icon">📞</span>+91 95741 63630</a>
-          <a href="mailto:youremail@gmail.com" class="c-item"><span class="c-icon">✉️</span>youremail@gmail.com</a>
-          <a href="https://www.linkedin.com/in/binali-patel-9b03a411a" target="_blank" class="c-item"><span class="c-icon">💼</span>linkedin.com/in/binali-patel-9b03a411a</a>
-          <div class="c-item" style="pointer-events:none;cursor:default;"><span class="c-icon">📍</span>Navsari, Gujarat, India</div>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="sec-label">02 — Experience</div>
+      <div class="sec-title">Work History</div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <span class="tl-date">Dec 2019 — May 2026</span>
+          <div class="tl-role">Senior Frontend Developer & Team Lead</div>
+          <div class="tl-co">Goldenmace IT Solutions</div>
+          <ul class="tl-list">
+            <li>Developed responsive, high-performance web interfaces using HTML5, CSS3, SCSS, JavaScript, Bootstrap and
+              Tailwind CSS.</li>
+            <li>Converted UI/UX designs from Figma and Adobe Photoshop into pixel-perfect, responsive layouts.</li>
+            <li>Built reusable and modular UI components to improve development efficiency and maintainability.</li>
+            <li>Ensured cross-browser compatibility across Chrome, Firefox, Safari, and Edge.</li>
+            <li>Implemented mobile-first design principles for responsive UIs across multiple devices.</li>
+            <li>Optimized website performance through code splitting, lazy loading, and asset optimization.</li>
+            <li>Used Git version control for code management, branching, and team collaboration.</li>
+            <li>Collaborated with backend developers, UI/UX designers, and product managers in Agile environments.</li>
+            <li>Conducted code reviews and enforced frontend coding standards and best practices.</li>
+            <li>Mentored junior developers and provided technical guidance to the frontend team.</li>
+            <li>Debugged and resolved UI bugs and frontend performance issues.</li>
+            <li>Built reusable and modular UI components improving development efficiency by 30%.</li>
+            <li>Optimized website performance through lazy loading and asset optimization, improving page speed by 40%.
+            </li>
+            <li>Led frontend development for 10+ commercial products across OTT, Healthcare, and SaaS platforms.</li>
+            <li>Led and mentored a frontend team while conducting code reviews and maintaining coding standards.</li>
+          </ul>
+          <div class="tl-awards">
+            <span class="tl-award">🏆 Employee of the Year 2020</span>
+            <span class="tl-award">⭐ Employee of the Month</span>
+            <span class="tl-award">👑 Dashboard Queen</span>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <span class="tl-date">Jun 2017 — May 2019</span>
+          <div class="tl-role">Web Designer / UI Developer</div>
+          <div class="tl-co">TemplateMela IT Services and IT Consulting</div>
+          <ul class="tl-list">
+            <li>Developed interactive web pages using HTML, CSS, and Bootstrap.</li>
+            <li>Implemented responsive layouts and cross-device compatibility.</li>
+            <li>Maintained and updated HTML templates and UI components.</li>
+          </ul>
         </div>
       </div>
-      <div class="contact-form">
-        <div class="f-group"><label class="f-label">Your Name</label><input type="text" class="f-input" placeholder="John Doe"></div>
-        <div class="f-group"><label class="f-label">Email Address</label><input type="email" class="f-input" placeholder="john@example.com"></div>
-        <div class="f-group"><label class="f-label">Message</label><textarea class="f-ta" placeholder="Tell me about your project or opportunity..."></textarea></div>
-        <button class="btn-primary" style="align-self:flex-start;">Send Message →</button>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="sec-label">03 — Projects</div>
+      <div class="sec-title">Live Projects</div>
+
+      <!-- Filter Tabs -->
+      <div class="proj-filters">
+        <button class="pf-btn active" data-filter="all">All Projects</button>
+        <button class="pf-btn" data-filter="wordpress">WordPress</button>
+        <button class="pf-btn" data-filter="html">HTML Template</button>
+        <button class="pf-btn" data-filter="laravel">Laravel</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- 1. Streamit WordPress -->
+        <div class="proj-card reveal" data-cat="wordpress">
+          <div class="proj-thumb t-streamit-wp">
+            📺
+            <span class="proj-type-badge badge-wp">WordPress</span>
+            <a href="https://streamit-wordpress.iqonic.design/" target="_blank" class="proj-live-btn">Live Demo ↗</a>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title">Streamit — OTT Video Streaming WordPress Theme</div>
+            <div class="proj-role-label">Frontend Developer / Team Lead</div>
+            <div class="proj-desc">Netflix-like OTT WordPress theme with fully functional admin panel, content
+              restriction, watchlist, video rating, advanced search, and multi-layout homepage support. Featured on
+              ThemeForest.</div>
+            <div class="proj-tags">
+              <span class="ptag">WordPress</span><span class="ptag">Elementor</span><span class="ptag">SCSS</span>
+              <span class="ptag">Bootstrap</span><span class="ptag">JavaScript</span><span class="ptag">Redux</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Streamit HTML Template -->
+        <div class="proj-card reveal" data-cat="html">
+          <div class="proj-thumb t-streamit-html">
+            🎬
+            <span class="proj-type-badge badge-html">HTML Template</span>
+            <a href="https://templates.iqonic.design/streamit-dist/intro" target="_blank" class="proj-live-btn">Live
+              Demo ↗</a>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title">Streamit — HTML / Vue / React / Laravel Admin Template</div>
+            <div class="proj-role-label">Frontend Developer / Team Lead</div>
+            <div class="proj-desc">Responsive Bootstrap 5 video streaming platform template — 5+ home demos, admin
+              panel, movie & show listings, episode pages. Available in HTML, Vue, React, and Laravel versions.</div>
+            <div class="proj-tags">
+              <span class="ptag">HTML5</span><span class="ptag">Bootstrap 5</span><span class="ptag">SCSS</span>
+              <span class="ptag">JavaScript</span><span class="ptag">Handlebars</span><span class="ptag">Gulp</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Streamit Laravel -->
+        <div class="proj-card reveal" data-cat="laravel">
+          <div class="proj-thumb t-streamit-l">
+            🖥️
+            <span class="proj-type-badge badge-laravel">Laravel</span>
+            <a href="http://apps.iqonic.design/streamit-laravel" target="_blank" class="proj-live-btn">Live Demo ↗</a>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title">Streamit — Laravel Video Streaming App</div>
+            <div class="proj-role-label">Frontend Developer</div>
+            <div class="proj-desc">Full Laravel version of the Streamit OTT platform — complete front-end UI integration
+              with Laravel backend, including movie homes, TV shows, merchandise store and episode management.</div>
+            <div class="proj-tags">
+              <span class="ptag">HTML5</span><span class="ptag">SCSS</span><span class="ptag">Bootstrap</span>
+              <span class="ptag">Laravel</span><span class="ptag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. KiviCare WordPress -->
+        <div class="proj-card reveal" data-cat="wordpress">
+          <div class="proj-thumb t-kivicare-wp">
+            🏥
+            <span class="proj-type-badge badge-wp">WordPress</span>
+            <a href="https://kivicare-wordpress.iqonic.design/" target="_blank" class="proj-live-btn">Live Demo ↗</a>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title">KiviCare — Medical Clinic & Patient Management WordPress Theme</div>
+            <div class="proj-role-label">Senior Frontend Developer</div>
+            <div class="proj-desc">The #1 complete clinic management WordPress theme — 24×7 appointment booking,
+              Elementor drag-and-drop builder, multiple clinic niche pages (Dental, Eye Care, Skincare, ENT),
+              WooCommerce ready.</div>
+            <div class="proj-tags">
+              <span class="ptag">WordPress</span><span class="ptag">Elementor</span><span class="ptag">SCSS</span>
+              <span class="ptag">JavaScript</span><span class="ptag">WooCommerce</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. KiviCare HTML -->
+        <div class="proj-card reveal" data-cat="html">
+          <div class="proj-thumb t-kivicare-html">
+            💊
+            <span class="proj-type-badge badge-html">HTML Template</span>
+            <a href="https://themeforest.net/item/kivicare-clinic-and-patient-management-html-template/47437941"
+              target="_blank" class="proj-live-btn">View on TF ↗</a>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title">KiviCare — Clinic & Patient Management HTML + ReactJS Template</div>
+            <div class="proj-role-label">Senior Frontend Developer</div>
+            <div class="proj-desc">Predefined web elements for clinic management — General Doctor, Dentist, Eye Care,
+              Skin Specialist, Fertility & ENT Clinic niche pages. Clean, modern HTML & ReactJS template.</div>
+            <div class="proj-tags">
+              <span class="ptag">HTML5</span><span class="ptag">Bootstrap</span><span class="ptag">SCSS</span>
+              <span class="ptag">React.js</span><span class="ptag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. SocialV WordPress -->
+        <div class="proj-card reveal" data-cat="wordpress">
+          <div class="proj-thumb t-socialv-wp">
+            👥
+            <span class="proj-type-badge badge-wp">WordPress</span>
+            <a href="https://socialv-wordpress.iqonic.design/" target="_blank" class="proj-live-btn">Live Demo ↗</a>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title">SocialV — Social Network & Community WordPress Theme</div>
+            <div class="proj-role-label">Frontend Developer / Team Lead</div>
+            <div class="proj-desc">Facebook-like BuddyPress social network theme — newsfeed, groups, chat, events,
+              profile pages, Stories plugin, LearnPress eLearning integration, and WooCommerce support.</div>
+            <div class="proj-tags">
+              <span class="ptag">WordPress</span><span class="ptag">BuddyPress</span><span class="ptag">Elementor</span>
+              <span class="ptag">SCSS</span><span class="ptag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. SocialV HTML -->
+        <div class="proj-card reveal" data-cat="html">
+          <div class="proj-thumb t-socialv-html">
+            💬
+            <span class="proj-type-badge badge-html">HTML Template</span>
+            <a href="https://templates.iqonic.design/socialv-dist/intro/" target="_blank" class="proj-live-btn">Live
+              Demo ↗</a>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title">SocialV — Social Network Admin Dashboard Template</div>
+            <div class="proj-role-label">Frontend Developer</div>
+            <div class="proj-desc">Multi-framework social dashboard — newsfeed, friends list, chat, calendar, events,
+              music, weather pages. Available in HTML, Laravel, Vue, and React. Built on HopeUI design system.</div>
+            <div class="proj-tags">
+              <span class="ptag">HTML5</span><span class="ptag">Bootstrap</span><span class="ptag">SCSS</span>
+              <span class="ptag">JavaScript</span><span class="ptag">Vue.js</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. XRay Medical Admin -->
+        <div class="proj-card reveal" data-cat="html">
+          <div class="proj-thumb t-xray">
+            🩻
+            <span class="proj-type-badge badge-html">Admin Template</span>
+            <a href="https://themeforest.net/item/xray-medical-and-hospital-admin-template/25794797" target="_blank"
+              class="proj-live-btn">View on TF ↗</a>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title">XRay — Medical & Hospital Admin Template</div>
+            <div class="proj-role-label">Frontend Developer</div>
+            <div class="proj-desc">Modern hospital and medical dashboard with ready-to-use pages — patient management,
+              appointments, doctor profiles, analytics. Available in React, VueJS, and HTML versions.</div>
+            <div class="proj-tags">
+              <span class="ptag">HTML5</span><span class="ptag">Bootstrap</span><span class="ptag">SCSS</span>
+              <span class="ptag">JavaScript</span><span class="ptag">React.js</span><span class="ptag">Vue.js</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="proj-more">
+        <a href="https://themeforest.net/user/iqonicdesign/portfolio?direction=desc&order_by=sales&view=grid"
+          target="_blank">
+          🔗 View All Projects on ThemeForest
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Binali Patel</div>
-    <p>© 2025 — All Rights Reserved</p>
-    <p>Navsari, Gujarat, India</p>
-  </div>
-</footer>
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <div class="sec-label">04 — Education</div>
+      <div class="sec-title">Academic Background</div>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-deg">MCA</div>
+          <div class="edu-school">Charotar University of Science & Technology (CHARUSAT)</div>
+          <span class="edu-year">Post Graduation 2017</span>
+        </div>
+        <div class="edu-card reveal">
+          <div class="edu-deg">BCA</div>
+          <div class="edu-school">Veer Narmad South Gujarat University (VNSGU), Surat</div>
+          <span class="edu-year">Graduated 2014</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-  // Theme Toggle
-  const html = document.documentElement;
-  const btn  = document.getElementById('themeBtn');
-  const saved = localStorage.getItem('bp-theme') || 'dark';
-  html.setAttribute('data-theme', saved);
-  btn.textContent = saved === 'dark' ? '☀️' : '🌙';
-  btn.addEventListener('click', () => {
-    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    btn.textContent = next === 'dark' ? '☀️' : '🌙';
-    localStorage.setItem('bp-theme', next);
-  });
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="sec-label">05 — Contact</div>
+      <div class="sec-title">Get In Touch</div>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h3>Got a project in mind?</h3>
+          <p>I'm open to freelance work, full-time roles, and exciting collaborations. Whether you need a stunning UI, a
+            reliable team lead, or a pixel-perfect frontend — let's build something great together.</p>
+          <div class="contact-items">
+            <a href="tel:+919574163630" class="c-item"><span class="c-icon">📞</span>+91 95741 63630</a>
+            <a href="mailto:binaliptl@gmail.com" class="c-item"><span class="c-icon">✉️</span>binaliptl@gmail.com</a>
+            <a href="https://www.linkedin.com/in/binaliptl" target="_blank" class="c-item"><span
+                class="c-icon">💼</span>linkedin.com/in/binaliptl</a>
+            <div class="c-item" style="pointer-events:none;cursor:default;"><span class="c-icon">📍</span>Navsari,
+              Gujarat, India</div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <div class="f-group"><label class="f-label">Your Name</label><input type="text" class="f-input"
+              placeholder="John Doe"></div>
+          <div class="f-group"><label class="f-label">Email Address</label><input type="email" class="f-input"
+              placeholder="john@example.com"></div>
+          <div class="f-group"><label class="f-label">Message</label><textarea class="f-ta"
+              placeholder="Tell me about your project or opportunity..."></textarea></div>
+          <button class="btn-primary" style="align-self:flex-start;">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // Project Filter
-  document.querySelectorAll('.pf-btn').forEach(btn => {
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Binali Patel</div>
+      <p>© 2026 — All Rights Reserved</p>
+      <p>Navsari, Gujarat, India</p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const html = document.documentElement;
+    const btn = document.getElementById('themeBtn');
+    const saved = localStorage.getItem('bp-theme') || 'dark';
+    html.setAttribute('data-theme', saved);
+    btn.textContent = saved === 'dark' ? '☀️' : '🌙';
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.proj-card').forEach(card => {
-        if (filter === 'all' || card.dataset.cat === filter) {
-          card.removeAttribute('data-hidden');
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      btn.textContent = next === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('bp-theme', next);
+    });
+
+    // Project Filter
+    document.querySelectorAll('.pf-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.proj-card').forEach(card => {
+          if (filter === 'all' || card.dataset.cat === filter) {
+            card.removeAttribute('data-hidden');
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
-  });
 
-  // Scroll Reveal
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('on'), i * 70);
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
+    // Scroll Reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('on'), i * 70);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
 </body>
+
 </html>

@@ -17,6 +17,10 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+img {
+  max-width: 100%;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -101,6 +105,10 @@ nav {
   border: 1px solid var(--success-border);
   padding: 6px 14px;
   border-radius: 24px;
+
+  @media (max-width: 557px) {
+    display: none;
+  }
 }
 
 .avail-dot {
@@ -617,6 +625,10 @@ section:last-of-type {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 32px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .proj-card {
@@ -837,13 +849,6 @@ section:last-of-type {
   position: relative;
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
-  align-items: start;
-}
-
 .contact-left h3 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
@@ -860,9 +865,13 @@ section:last-of-type {
 }
 
 .contact-items {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .c-item {
@@ -947,7 +956,7 @@ section:last-of-type {
 footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .footer-inner {
@@ -1017,10 +1026,14 @@ footer p {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .nav-links {
     display: none;
   }
+}
+
+@media (max-width: 768px) {
+
 
   section {
     padding: 80px 0;
@@ -1086,6 +1099,10 @@ footer p {
   z-index: 10;
   animation: float 6s ease-in-out infinite;
   white-space: nowrap;
+
+  @media (max-width: 557px) {
+    display: none;
+  }
 }
 
 @keyframes float {
@@ -1211,7 +1228,7 @@ footer p {
 .stat-count {
   font-size: 2.75rem;
   font-weight: 900;
-  color: #fff;
+  color: var(--text);
   line-height: 1;
 }
 
@@ -1264,14 +1281,11 @@ footer p {
   height: 64px;
   border: none;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-card);
   backdrop-filter: blur(14px);
-  color: #fff;
+  color: var(--text);
   font-size: 24px;
   cursor: pointer;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.3),
-    inset 0 1px 1px rgba(255, 255, 255, 0.15);
   transition: 0.4s ease;
 }
 
@@ -1310,14 +1324,11 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--text);
   text-decoration: none;
   font-size: 20px;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.25),
-    inset 0 1px 1px rgba(255, 255, 255, 0.12);
+  background: var(--bg-card);
 
   transform: translateY(20px) scale(0.8);
   opacity: 0;
@@ -1334,16 +1345,16 @@ footer p {
 }
 
 /* Brand Colors */
-.facebook:hover {
-  background: #1877f2;
+.mail:hover {
+  background: #C5221F;
 }
 
-.instagram:hover {
-  background: #e1306c;
+.github:hover {
+  background: #0FBF3E;
 }
 
-.twitter:hover {
-  background: #1da1f2;
+.phone:hover {
+  background: #00d473;
 }
 
 .linkedin:hover {
